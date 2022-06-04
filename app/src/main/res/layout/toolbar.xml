@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:elevation="4dp"
+    android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:id="@+id/applifashion_logo"
+            android:src="@drawable/ic_launcher_applifashion_logo"
+            android:layout_marginEnd="35dp"
+            android:layout_gravity="start"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:id="@+id/search_icon"
+            android:src="@drawable/ic_search_icon"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+
+            android:id="@+id/profile_icon"
+            android:src="@drawable/ic_user_profile_icon"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+
+            android:id="@+id/shopping_icon"
+            android:src="@drawable/ic_shopping_bag"/>
+    </LinearLayout>
+</android.support.v7.widget.Toolbar>
