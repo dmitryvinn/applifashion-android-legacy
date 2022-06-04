@@ -5,7 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_product_layout.xml" value="0.28216818642350555" />
-        <entry key="app/src/main/res/layout/product_row_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/footer_layout.xml" value="0.5226449275362319" />
+        <entry key="app/src/main/res/layout/product_row_layout.xml" value="0.67" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.46200607902735563" />
         <entry key="app/src/main/res/menu/product_list_bar.xml" value="0.9512820512820512" />
       </map>

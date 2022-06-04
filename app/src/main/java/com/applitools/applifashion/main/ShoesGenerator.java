@@ -9,11 +9,6 @@ public class ShoesGenerator {
     private final List<Shoe> shoes;
     private ShoesGenerator() {
         shoes = new ArrayList<>();
-        shoes.add(new Shoe("Appli Air x Night",
-                R.drawable.dress_shoes,
-                "$33.00",
-                "$48.00"));
-
 
         shoes.add(new Shoe("Appli Air x Night",
                 R.drawable.dress_shoes,

@@ -1,97 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:padding="5dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    >
     <!--
     grid items for RecyclerView
     -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/discount_icon"
-            android:layout_width="20dp"
+            android:layout_width="32dp"
             android:layout_height="21dp"
+            android:layout_marginStart="5dp"
             android:scaleType="fitXY"
             android:src="@drawable/discount" />
 
         <ImageView
             android:id="@+id/shoe_image"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:layout_width="168dp"
+            android:layout_height="162dp"
+            android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/black_shoes" />
 
         <ImageView
             android:id="@+id/one_day_left_icon"
-            android:layout_width="54dp"
-            android:layout_height="54dp"
+            android:layout_width="65dp"
+            android:layout_height="19dp"
+            android:layout_gravity="center"
             android:scaleType="fitXY"
-            android:src="@drawable/one_day_left" />
+            android:src="@drawable/one_day_left"
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/shoe_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
             android:text="Shoe Name"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="@color/black" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/current_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
                 android:text="$999.99"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/old_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
+                android:layout_marginStart="5dp"
                 android:text="$99.99"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="#888888" />
+
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/like_icon"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:scaleType="fitXY"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
                 android:src="@drawable/ic_like_icon" />
 
             <ImageView
                 android:id="@+id/random_icon"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:scaleType="fitXY"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
                 android:src="@drawable/ic_random_icon" />
 
             <ImageView
                 android:id="@+id/shopping_cart"
-                android:layout_width="54dp"
-                android:layout_height="54dp"
-                android:scaleType="fitXY"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
                 android:src="@drawable/ic_shopping_cart_icon" />
         </LinearLayout>
     </LinearLayout>
