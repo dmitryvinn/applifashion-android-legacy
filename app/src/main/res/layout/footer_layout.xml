@@ -1,6 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_marginTop="50dp"
+    android:background="#192133">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textColor="@color/white"
+           android:text="Quick Links"
+           android:textStyle="bold"
+           />
+        <TextView
+            android:id="@+id/about_us"
+            android:textColor="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:text="@string/about_us_link"
+            android:focusable="true" />
+        <TextView
+            android:id="@+id/faq"
+            android:textColor="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="FAQ"/>
+        <TextView
+            android:id="@+id/my_account"
+            android:textColor="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="My account"/>
+        <TextView
+            android:id="@+id/blog"
+            android:textColor="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Blog"/>
+        <TextView
+            android:id="@+id/contacts"
+            android:textColor="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Contacts"/>
 
-</RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Contacts"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/home_address"
+                android:layout_width="22dp"
+                android:layout_height="19dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_home_outline" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="155 Bovet Rd #600 \nSan Mateo, CA 94402"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="19dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_mail_outline" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="srd@applitools.com"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

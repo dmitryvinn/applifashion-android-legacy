@@ -158,6 +158,9 @@
         </LinearLayout>
 
     </LinearLayout>
+    <include
+        android:id="@+id/footer"
 
+        layout="@layout/footer_layout" />
 
 </RelativeLayout>
