@@ -1,6 +1,7 @@
 package com.applitools.applifashion.main;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
@@ -41,6 +42,16 @@ public class ProductActivity extends AppCompatActivity {
         final Drawable shoeImageDrawable = getResources().getDrawable(shoe.getImageId());
         shoeImage.setImageDrawable(shoeImageDrawable);
 
+        // Price and add to cart button
+        final TextView currentPrice = (TextView) findViewById(R.id.current_price_product_page);
+        currentPrice.setText(shoe.getCurrentPrice());
+        final TextView oldPrice = (TextView) findViewById(R.id.old_price_product_page);
+        if (shoe.getOldPrice() != null) {
+            oldPrice.setText(shoe.getOldPrice());
+            oldPrice.setPaintFlags(oldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        } else {
+            oldPrice.setVisibility(View.GONE);
+        }
 
     }
 
