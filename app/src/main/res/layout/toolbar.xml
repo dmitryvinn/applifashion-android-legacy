@@ -19,6 +19,11 @@
             android:src="@drawable/ic_launcher_applifashion_logo"
             android:layout_marginEnd="20dp"
             android:layout_gravity="start"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -38,8 +43,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="end"
-
-            android:layout_marginEnd="50dp"
             android:src="@drawable/ic_shopping_bag" />
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>
