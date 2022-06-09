@@ -1,91 +1,66 @@
-package com.applitools.applifashion.main;
+package com.applitools.applifashion.main.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import java.util.ArrayList;
+import com.applitools.applifashion.main.R;
+import com.applitools.applifashion.main.activities.ProductActivity;
+import com.applitools.applifashion.main.beans.Shoe;
+
 import java.util.List;
 
-public class CustomAdapter extends RecyclerView.Adapter {
+public class ProductAdapter extends RecyclerView.Adapter {
     private final List<Shoe> shoes;
     private final Context context;
 
     private static final int FOOTER_VIEW = 1;
 
-// Define a view holder for Footer view
-
-    public class FooterViewHolder extends RecyclerView.ViewHolder {
+    public static class FooterViewHolder extends RecyclerView.ViewHolder {
         public FooterViewHolder(View itemView) {
             super(itemView);
-            TextView linkTextView = (TextView) itemView.findViewById(R.id.about_us);
-//            linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
-
-//            HyperLink = (TextView)findViewById(R.id.textView1);
-
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
         }
     }
 
-    public CustomAdapter(final Context context, final List<Shoe> shoes) {
+    public ProductAdapter(final Context context, final List<Shoe> shoes) {
         this.context = context;
         this.shoes = shoes;
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v;
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        final View view;
         if (viewType == FOOTER_VIEW) {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.footer_layout, parent, false);
-
-            FooterViewHolder vh = new FooterViewHolder(v);
-
-//            StaggeredGridLayoutManager.LayoutParams layoutParams = (StaggeredGridLayoutManager.LayoutParams) vh.itemView.getLayoutParams();
-//            layoutParams.setFullSpan(true);
-            return vh;
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.footer_layout, parent, false);
+            return  new FooterViewHolder(view);
         } else {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_row_layout,
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_row_layout,
                     parent, false);
+            return new ShoeViewHolder(view);
         }
-        // infalte the item Layout
-
-        // set the view's size, margins, paddings and layout parameters
-        ShoeViewHolder vh = new ShoeViewHolder(v); // pass the view to View Holdercontext
-        return vh;
     }
 
-
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        // set the data in items
-
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         try {
             if (holder instanceof ShoeViewHolder) {
                 final ShoeViewHolder shoeViewHolder = (ShoeViewHolder) holder;
-                // implement setOnClickListener event on item view.
                 final Shoe shoe = shoes.get(position);
                 shoeViewHolder.setCurrentPrice(shoe.getCurrentPrice());
                 shoeViewHolder.setShoeName(shoe.getName());
-                final Drawable shoeImage = context.getResources().getDrawable(shoe.getImageId());
+                @SuppressLint("UseCompatLoadingForDrawables") final Drawable shoeImage
+                        = context.getResources().getDrawable(shoe.getImageId());
                 shoeViewHolder.setShoeImage(shoeImage);
 
                 if (shoe.getOldPrice() == null) {
@@ -95,30 +70,27 @@ public class CustomAdapter extends RecyclerView.Adapter {
 
                 }
 
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        // open another activity on item click
-                        Intent intent = new Intent(context, ProductActivity.class);
-                        intent.putExtra("shoe", shoe); // put image data in Intent
-                        context.startActivity(intent); // start Intent
-                    }
+                holder.itemView.setOnClickListener(view -> {
+                    Intent intent = new Intent(context, ProductActivity.class);
+                    intent.putExtra("shoe", shoe);
+                    context.startActivity(intent);
                 });
             } else if (holder instanceof FooterViewHolder) {
-                FooterViewHolder vh = (FooterViewHolder) holder;
+                FooterViewHolder footerViewHolder = (FooterViewHolder) holder;
 
-                StaggeredGridLayoutManager.LayoutParams layoutParams = (StaggeredGridLayoutManager.LayoutParams) vh.itemView.getLayoutParams();
-                if ( layoutParams == null ) {
+                StaggeredGridLayoutManager.LayoutParams layoutParams
+                        = (StaggeredGridLayoutManager.LayoutParams) footerViewHolder.itemView.getLayoutParams();
+                if (layoutParams == null) {
                     layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 }
                 layoutParams.setFullSpan(true);
-                vh.itemView.setLayoutParams(layoutParams);
+                footerViewHolder.itemView.setLayoutParams(layoutParams);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+
     @Override
     public int getItemCount() {
         if (shoes == null) {
@@ -148,12 +120,12 @@ public class CustomAdapter extends RecyclerView.Adapter {
     public class ShoeViewHolder extends RecyclerView.ViewHolder {
         // init the item view's
 
-        private ImageView discountFlag;
-        private ImageView shoeImage;
-        private ImageView oneDayLeftFlag;
-        private TextView shoeName;
-        private TextView currentPrice;
-        private TextView oldPrice;
+        private final ImageView discountFlag;
+        private final ImageView shoeImage;
+        private final ImageView oneDayLeftFlag;
+        private final TextView shoeName;
+        private final TextView currentPrice;
+        private final TextView oldPrice;
 
         public ShoeViewHolder(View itemView) {
             super(itemView);

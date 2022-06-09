@@ -1,4 +1,7 @@
-package com.applitools.applifashion.main;
+package com.applitools.applifashion.main.utils;
+
+import com.applitools.applifashion.main.R;
+import com.applitools.applifashion.main.beans.Shoe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +53,6 @@ public class ShoesGenerator {
                 "$90.00"));
     }
 
-    // Static method
-    // Static method to create instance of Singleton class
     public static ShoesGenerator getInstance()
     {
         if (instance == null)

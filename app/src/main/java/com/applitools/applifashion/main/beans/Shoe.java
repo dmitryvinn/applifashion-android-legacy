@@ -1,8 +1,13 @@
-package com.applitools.applifashion.main;
+package com.applitools.applifashion.main.beans;
 
 import java.io.Serializable;
 
 public class Shoe implements Serializable {
+    private final String name;
+    private final int imageId;
+    private final String currentPrice;
+    private String oldPrice;
+
     public Shoe(String name, int imageId, String currentPrice) {
         this.name = name;
         this.imageId = imageId;
@@ -13,10 +18,6 @@ public class Shoe implements Serializable {
         this.oldPrice = oldPrice;
     }
 
-    private String name;
-    private int imageId;
-    private String currentPrice;
-    private String oldPrice;
 
     public String getName() {
         return name;
