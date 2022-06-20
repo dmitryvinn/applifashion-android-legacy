@@ -7,14 +7,14 @@
         <entry key="app/src/main/res/drawable/ic_home_outline.xml" value="0.163" />
         <entry key="app/src/main/res/drawable/ic_mail_outline.xml" value="0.163" />
         <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.18033509700176367" />
-        <entry key="app/src/main/res/layout-land/activity_product_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-land/activity_product_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout-land/footer_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/toolbar.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_product_layout.xml" value="0.4289749145507813" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.244" />
+        <entry key="app/src/main/res/layout/activity_product_layout.xml" value="0.21" />
         <entry key="app/src/main/res/layout/footer_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/product_row_layout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/toolbar.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.165" />
         <entry key="app/src/main/res/menu/product_list_bar.xml" value="0.9512820512820512" />
       </map>
     </option>
