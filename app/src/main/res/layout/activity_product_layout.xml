@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity"
-    android:orientation="vertical"
     android:background="#fff">
 
     <include
@@ -14,218 +13,191 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
+        android:layout_marginTop="70dp"
         android:background="@android:color/darker_gray"/>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/shoe_name_product_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Shoe Name"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/shoe_image_product_page"
+            android:layout_width="168dp"
+            android:layout_height="162dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/black_shoes" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
-            >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:padding="15dp"
-            android:orientation="vertical"
+            <ImageView
+                android:id="@+id/star_rating"
 
-            >
-
+                android:layout_width="55dp"
+                android:layout_height="6dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/review_rating" />
 
             <TextView
-                android:id="@+id/shoe_name_product_page"
+                android:id="@+id/number_of_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="4 reviews"
+                android:textColor="#888888" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sku"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:text="SKU: MTKRY-001"
+                android:textColor="@color/black" />
 
-                android:text="Shoe Name"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/shoe_image_product_page"
-                android:layout_width="168dp"
-                android:layout_height="162dp"
+            <TextView
+                android:id="@+id/review_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:scaleType="fitXY"
-                android:src="@drawable/black_shoes" />
+                android:text="@string/shoes_review_description"
+                android:textColor="@color/black" />
+        </LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:text="Size"
+                android:textColor="@color/black" />
 
-                <ImageView
-                    android:id="@+id/star_rating"
-
-                    android:layout_width="55dp"
-                    android:layout_height="6dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/review_rating" />
-
-                <TextView
-                    android:id="@+id/number_of_reviews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="4 reviews"
-                    android:textColor="#888888" />
-            </LinearLayout>
-
-            <LinearLayout
+            <Spinner
+                android:id="@+id/size_dropdown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
 
-                android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
 
-                <TextView
-                    android:id="@+id/sku"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginBottom="5dp"
-                    android:text="SKU: MTKRY-001"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/review_description"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/shoes_review_description"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="10dp"
-                    android:text="Size"
-                    android:textColor="@color/black" />
-
-                <Spinner
-                    android:id="@+id/size_dropdown"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:drawable/btn_dropdown"
-                    android:spinnerMode="dropdown" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="20dp"
-                    android:text="Quantity"
-                    android:textColor="@color/black" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
-
-                    <Button
-                        android:id="@+id/decremental"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/ic_minus_icon" />
-
-                    <EditText
-                        android:id="@+id/quantity"
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:inputType="number"
-                        android:minEms="1"
-                        android:text="1"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/black" />
-
-                    <Button
-                        android:id="@+id/incremental"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/ic_plus_icon"
-                        android:backgroundTint="@color/cardview_dark_background" />
-                </LinearLayout>
-
-            </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="20dp"
+                android:text="Quantity"
+                android:textColor="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/current_price_product_page"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="$999.99"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/old_price_product_page"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="5dp"
-                    android:text="$99.99"
-                    android:textColor="#888888" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                android:layout_marginEnd="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:id="@+id/decremental"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_minus_icon" />
+
+                <EditText
+                    android:id="@+id/quantity"
+                    android:layout_width="20dp"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:inputType="number"
+                    android:minEms="1"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black" />
 
-                    android:text="Add to Card" />
+                <Button
+                    android:id="@+id/incremental"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/ic_plus_icon"
+                    android:backgroundTint="@color/cardview_dark_background" />
             </LinearLayout>
-
-
-
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <include
-                android:id="@+id/footer"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/current_price_product_page"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$999.99"
+                android:textColor="@color/black" />
 
-                layout="@layout/footer_layout" />
+            <TextView
+                android:id="@+id/old_price_product_page"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="$99.99"
+                android:textColor="#888888" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Add to Card"/>
         </LinearLayout>
 
-        </LinearLayout>
+    </LinearLayout>
+    <include
+        android:id="@+id/footer"
 
-    </ScrollView>
+        layout="@layout/footer_layout" />
 
-
-</LinearLayout>
+</RelativeLayout>
