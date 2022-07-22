@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -68,7 +69,7 @@ public class FilteringActivity extends AppCompatActivity {
         typeBasketball = findViewById(R.id.type_basketball);
         typeRunning = findViewById(R.id.type_running);
         typeTraining = findViewById(R.id.type_training);
-
+        setHomeToolbar();
     }
 
     public void Reset(View v) {
@@ -189,6 +190,13 @@ public class FilteringActivity extends AppCompatActivity {
         return priceRanges;
     }
 
+
+    void setHomeToolbar() {
+        final ImageView logo = findViewById(R.id.applifashion_logo);
+        logo.setOnClickListener(v -> {
+            finish();
+        });
+    }
 
     private ArrayList<String> getTypes() {
         final ArrayList<String> types = new ArrayList<>();
