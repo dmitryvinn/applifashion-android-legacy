@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private final static String[] SORT_BY_VALUES = new String[]{"Popularity", "Average rating", "Newness",
             "Price: low to high", "Price: high to low"};
     private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(getApplicationContext(), FilteringActivity.class);
-//                intent.putExtra("shoe", shoe);
                 startActivityForResult(intent, 1);
             }
         });
@@ -125,57 +125,3 @@ public class MainActivity extends AppCompatActivity {
         dropdown.setAdapter(adapter);
     }
 }
-
-/**
- *
- *
- * <SlidingDrawer
- *         android:id="@+id/SlidingDrawer"
- *         android:layout_width="wrap_content"
- *         android:layout_height="250dip"
- *         android:content="@+id/contentLayout"
- *         android:handle="@+id/slideHandleButton"
- *         android:padding="10dip" >
- *
- *         <Button
- *             android:id="@+id/slideHandleButton"
- *             android:layout_width="wrap_content"
- *             android:layout_height="wrap_content"
- *             android:background="@drawable/closearrow" >
- *         </Button>
- *
- *         <LinearLayout
- *             android:id="@+id/contentLayout"
- *             android:layout_width="wrap_content"
- *             android:layout_height="wrap_content"
- *             android:gravity="center|top"
- *             android:orientation="vertical"
- *             android:background="#ff00ff"
- *             android:padding="10dip" >
- *
- *             <Button
- *                 android:id="@+id/Button01"
- *                 android:layout_width="wrap_content"
- *                 android:layout_height="wrap_content"
- *                 android:text="Content" >
- *             </Button>
- *
- *             <Button
- *                 android:id="@+id/Button02"
- *                 android:layout_width="wrap_content"
- *                 android:layout_height="wrap_content"
- *                 android:layout_gravity="center"
- *                 android:text="Content" >
- *
- *             </Button>
- *
- *             <Button
- *                 android:id="@+id/Button03"
- *                 android:layout_width="wrap_content"
- *                 android:layout_height="wrap_content"
- *                 android:text="Content" >
- *             </Button>
- *         </LinearLayout>
- *     </SlidingDrawer>
- *
- */
