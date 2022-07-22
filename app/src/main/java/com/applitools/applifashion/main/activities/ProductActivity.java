@@ -30,11 +30,18 @@ public class ProductActivity extends AppCompatActivity {
         final Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
         setSizeSpinner();
-
+        setHomeToolbar();
         final Intent intent = getIntent(); // get Intent which was set from adapter of Previous Activity
         final Shoe shoe = (Shoe) intent.getSerializableExtra("shoe");
         updateActivity(shoe);
         activateCounter();
+    }
+
+    void setHomeToolbar() {
+        final ImageView logo = findViewById(R.id.applifashion_logo);
+        logo.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     private void updateActivity(final Shoe shoe) {

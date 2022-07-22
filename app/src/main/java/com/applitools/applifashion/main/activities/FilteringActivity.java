@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 
 import com.applitools.applifashion.main.R;
 import com.applitools.applifashion.main.utils.Brand;
@@ -68,7 +69,14 @@ public class FilteringActivity extends AppCompatActivity {
         typeBasketball = findViewById(R.id.type_basketball);
         typeRunning = findViewById(R.id.type_running);
         typeTraining = findViewById(R.id.type_training);
+        setHomeToolbar();
+    }
 
+    void setHomeToolbar() {
+        final ImageView logo = findViewById(R.id.applifashion_logo);
+        logo.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     public void Reset(View v) {
