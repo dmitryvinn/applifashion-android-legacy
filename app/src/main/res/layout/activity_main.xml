@@ -61,10 +61,5 @@
             android:layout_gravity="center"
             android:layout_marginTop="60dp" />
     </LinearLayout>
-    <include
-        android:id="@+id/footer"
-
-        layout="@layout/footer_layout" />
-
 </RelativeLayout>
 

@@ -1,23 +1,18 @@
 package com.applitools.applifashion.main.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SlidingDrawer;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.applitools.applifashion.main.FilteringActivity;
 import com.applitools.applifashion.main.adapters.ProductAdapter;
 import com.applitools.applifashion.main.R;
 import com.applitools.applifashion.main.beans.Shoe;
@@ -27,7 +22,6 @@ import com.applitools.applifashion.main.utils.PriceRange;
 import com.applitools.applifashion.main.utils.ShoesGenerator;
 import com.applitools.applifashion.main.utils.Type;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -101,7 +95,12 @@ public class MainActivity extends AppCompatActivity {
 
                         if (!priceRanges.isEmpty()) {
                             fitsPrice = priceRanges.stream().anyMatch(priceRange ->
-                                    shoe.getCurrentPriceValue() <= PriceRange.getEnum(priceRange).getMaxPrice());
+                                    {
+                                        final PriceRange currentPriceRange = PriceRange.getEnum(priceRange);
+                                        return shoe.getCurrentPriceValue() >= currentPriceRange.getMinPrice()
+                                                && shoe.getCurrentPriceValue() <= currentPriceRange.getMaxPrice();
+                                    }
+                                    );
                         }
 
                         if (!types.isEmpty()) {

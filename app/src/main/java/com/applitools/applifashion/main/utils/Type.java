@@ -3,7 +3,6 @@ package com.applitools.applifashion.main.utils;
 import java.util.Arrays;
 
 public enum Type {
-    ANY("Any"),
     SOCCER("Soccer"),
     BASKETBALL("Basketball"),
     RUNNING("Running"),
@@ -22,6 +21,6 @@ public enum Type {
     public static Type getEnum(String value) {
         return Arrays.stream(Type.values())
                 .filter(c -> c.value.equals(value))
-                .findFirst().orElse(ANY);
+                .findFirst().orElse(null);
     }
 }

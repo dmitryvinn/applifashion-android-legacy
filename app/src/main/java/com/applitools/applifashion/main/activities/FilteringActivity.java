@@ -1,4 +1,4 @@
-package com.applitools.applifashion.main;
+package com.applitools.applifashion.main.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 
+import com.applitools.applifashion.main.R;
 import com.applitools.applifashion.main.utils.Brand;
 import com.applitools.applifashion.main.utils.Color;
 import com.applitools.applifashion.main.utils.PriceRange;
@@ -71,14 +72,27 @@ public class FilteringActivity extends AppCompatActivity {
     }
 
     public void Reset(View v) {
-        // Put the String to pass back into an Intent and close this activity
-        Intent intent = new Intent();
-        intent.putStringArrayListExtra("brands", new ArrayList<>());
-        intent.putStringArrayListExtra("colors", new ArrayList<>());
-        intent.putStringArrayListExtra("priceRanges", new ArrayList<>());
-        intent.putStringArrayListExtra("types", new ArrayList<>());
-        setResult(RESULT_OK, intent);
-        finish();
+        colorBlack.setChecked(false);
+        colorWhite.setChecked(false);
+        colorBlue.setChecked(false);
+        colorGreen.setChecked(false);
+        colorYellow.setChecked(false);
+
+        brandAbibas.setChecked(false);
+        brandMykey.setChecked(false);
+        brandBans.setChecked(false);
+        brandOverArmour.setChecked(false);
+        brandImBalance.setChecked(false);
+
+        priceRangeUpTo50.setChecked(false);
+        priceRangeUpTo100.setChecked(false);
+        priceRangeUpTo150.setChecked(false);
+        priceRangeUpTo500.setChecked(false);
+
+        typeSoccer.setChecked(false);
+        typeBasketball.setChecked(false);
+        typeRunning.setChecked(false);
+        typeTraining.setChecked(false);
     }
 
     public void Filter(View v) {

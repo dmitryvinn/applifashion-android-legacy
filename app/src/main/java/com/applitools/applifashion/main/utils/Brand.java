@@ -3,7 +3,6 @@ package com.applitools.applifashion.main.utils;
 import java.util.Arrays;
 
 public enum Brand {
-    ANY("Any"),
     ABIBAS("Abibas"),
     MYKEY("Mykey"),
     BANS("Bans"),
@@ -23,7 +22,7 @@ public enum Brand {
     public static Brand getEnum(String value) {
         return Arrays.stream(Brand.values())
                 .filter(c -> c.value.equals(value))
-                .findFirst().orElse(ANY);
+                .findFirst().orElse(null);
     }
 
 }

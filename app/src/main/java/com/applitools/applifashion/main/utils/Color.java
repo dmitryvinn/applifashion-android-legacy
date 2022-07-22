@@ -3,7 +3,6 @@ package com.applitools.applifashion.main.utils;
 import java.util.Arrays;
 
 public enum Color {
-    ANY("Any"),
     BLACK("Black"),
     WHITE("White"),
     BLUE("Blue"),
@@ -23,6 +22,6 @@ public enum Color {
     public static Color getEnum(String value) {
         return Arrays.stream(Color.values())
                 .filter(c -> c.value.equals(value))
-                .findFirst().orElse(ANY);
+                .findFirst().orElse(null);
     }
 }

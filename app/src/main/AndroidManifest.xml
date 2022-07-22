@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Applifashion"
         tools:targetApi="31">
         <activity
-            android:name=".FilteringActivity"
+            android:name=".activities.FilteringActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
