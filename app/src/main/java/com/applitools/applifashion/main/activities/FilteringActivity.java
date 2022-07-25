@@ -119,7 +119,7 @@ public class FilteringActivity extends AppCompatActivity {
         intent.putStringArrayListExtra("priceRanges", priceRanges);
         intent.putStringArrayListExtra("types", types);
 
-        setResult(RESULT_OK, intent);
+        setResult(RESULT_CANCELED, intent);
         finish();
     }
 
