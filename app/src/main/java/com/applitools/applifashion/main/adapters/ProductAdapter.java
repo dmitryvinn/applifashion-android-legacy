@@ -159,9 +159,12 @@ public class ProductAdapter extends RecyclerView.Adapter {
         }
 
         public void setOldPrice(String oldPrice) {
+            discountFlag.setVisibility(View.VISIBLE);
+            this.oldPrice.setVisibility(View.VISIBLE);
+            oneDayLeftFlag.setVisibility(View.VISIBLE);
+
             this.oldPrice.setText(oldPrice);
             this.oldPrice.setPaintFlags(this.oldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-
         }
     }
 }
